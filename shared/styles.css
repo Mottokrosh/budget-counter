@@ -1,0 +1,110 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+.budget-display {
+	font-size: 3rem;
+	font-weight: bold;
+	margin: 20px 0;
+}
+
+.controls {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	margin: 20px 0;
+}
+
+input[type="number"] {
+	width: 120px;
+	padding: 10px;
+	font-size: 1.2rem;
+	text-align: center;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+}
+
+#newBudget {
+	width: 160px;
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+button:disabled {
+	background: #ccc;
+	cursor: not-allowed;
+}
+
+.btn-add {
+	background: #4CAF50;
+	color: white;
+}
+
+.btn-subtract {
+	background: #f44336;
+	color: white;
+}
+
+.btn-set {
+	background: #2196F3;
+	color: white;
+}
+
+.btn-spend {
+	padding: 20px 40px;
+	font-size: 1.5rem;
+	border-radius: 12px;
+	background: #f44336;
+	color: white;
+	margin: 10px;
+}
+
+.btn-spend-small {
+	padding: 15px 30px;
+	font-size: 1.2rem;
+	border-radius: 10px;
+	background: #ff9800;
+	color: white;
+	margin: 10px;
+}
+
+.status {
+	color: #666;
+	font-size: 0.9rem;
+	margin-top: 20px;
+}
+
+.error {
+	color: #f44336;
+}
+
+/* Stack buttons on small screens */
+@media (max-width: 360px) {
+	.controls {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.btn-spend,
+	.btn-spend-small {
+		width: 100%;
+	}
+}
