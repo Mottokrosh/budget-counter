@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Adi's Budget</title>
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23FFD700' stroke='%23DAA520' stroke-width='5'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23DAA520'>€</text></svg>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<title>Adrians Budget</title>
+	
+	<!-- PWA Meta Tags -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="Adrians Budget">
+	<meta name="theme-color" content="#1a1a2e">
+	
+	<!-- App Icons -->
+	<link rel="manifest" href="manifest.json">
+	<link rel="icon" href="../shared/icon-192.png" type="image/png">
+	<link rel="apple-touch-icon" href="../shared/icon-180.png">
+	
 	<link rel="stylesheet" href="../shared/styles.css">
 	<style>
 		body {
@@ -13,6 +25,9 @@
 			min-height: 100vh;
 			color: #fff;
 			position: relative;
+			/* Safe area insets for notched devices */
+			padding-top: env(safe-area-inset-top);
+			padding-bottom: env(safe-area-inset-bottom);
 		}
 		
 		body::before {
