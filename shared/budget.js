@@ -207,3 +207,10 @@ function amount() {
 
 // Load on startup
 loadBudget();
+
+// Reload when app becomes visible (for PWA)
+document.addEventListener('visibilitychange', () => {
+	if (document.visibilityState === 'visible') {
+		loadBudget();
+	}
+});
