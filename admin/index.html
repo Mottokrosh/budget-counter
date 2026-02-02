@@ -14,7 +14,7 @@
 	
 	<div class="controls">
 		<button class="btn-subtract" onclick="adjustBudget(-amount())">−</button>
-		<input type="number" id="amount" value="10" min="0">
+		<input type="number" id="amount" value="1" min="0" step="0.5">
 		<button class="btn-add" onclick="adjustBudget(amount())">+</button>
 	</div>
 	
@@ -23,8 +23,28 @@
 		<button class="btn-set" onclick="setBudget()">Set Budget</button>
 	</div>
 	
+	<div class="controls">
+		<button class="btn-reset" onclick="resetWeek()">Reset Week</button>
+	</div>
+	
+	<div class="weekly-spending">
+		<h2>This Week</h2>
+		<table id="weeklyTable" class="weekly-table"></table>
+	</div>
+	
 	<div class="status" id="status"></div>
 
 	<script src="../shared/budget.js"></script>
+	<script>
+		// Reset week manually
+		async function resetWeek() {
+			if (!confirm('Reset budget to €7 and clear weekly spending?')) return;
+			currentBudget = WEEKLY_BUDGET;
+			dailySpending = [0, 0, 0, 0, 0, 0, 0];
+			weekStart = getWeekStart();
+			updateDisplay();
+			await saveBudget();
+		}
+	</script>
 </body>
 </html>
